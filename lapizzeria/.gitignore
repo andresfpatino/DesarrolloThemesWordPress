@@ -1,0 +1,16 @@
+# .htacess y archivos .txt
+*.htaccess
+*.txt
+
+# admin e includes
+*wp-admin
+*wp-includes
+
+# Ingnora wp-content menos themes
+wp-content/*
+wp-content/themes/index.php
+!wp-content/themes/
+
+# ignora archivo de la raiz
+/*.php
+
