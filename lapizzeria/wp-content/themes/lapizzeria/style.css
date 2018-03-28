@@ -1,6 +1,6 @@
 /*
 Theme Name: La Pizzeria
-Theme URI: 
+Theme URI:
 Author: Andrés Felipe Patiño Vallejo
 Author URI: https://andresfpatino.github.io/
 Description: Theme para sitio web de restaurantes o pizzas
@@ -10,3 +10,203 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: restaurant, mobile first, responsive, pizza
 Text Domain: lapizzeria
 */
+
+html {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+*, *:before , *:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    max-width: 1100px;
+    widows: 100%;
+    margin:0 auto;
+}
+
+/* HEADER */
+header.encabezado-sitio{
+    padding: 10px 0;
+    background: url('img/bg.png');
+    background-attachment: fixed;
+}
+
+div.logo {
+    text-align:center;
+}
+img.logotipo{
+    width: 140px;
+}
+
+img.logotipo:hover {
+    transform: rotate(-10deg);
+}
+
+@media only screen and (min-width:768px){
+    div.logo {
+        text-align: left;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    div.logo {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width:768px){
+    header.encabezado-sitio .contenedor {
+        position:relative;
+    }
+    .informacion-encabezado {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
+
+div.direccion {
+  display: block;
+  clear: both;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+div.direccion p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color:#fff;
+}
+
+@media only screen and (min-width:768px){
+  div.direccion p {
+      text-align: right;
+  }
+}
+
+/* MENU REDES SOCIALES */
+
+@media only screen and (min-width:768px){
+  nav.sociales ul {
+    float: right;
+  }
+}
+
+
+nav.sociales ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.sr-text {
+  display: none;
+}
+
+nav.sociales ul li {
+  position: relative;
+  display: inline-block;
+}
+
+nav.sociales ul li a:before {
+  font-family: 'FontAwesome';
+  display: inline-block;
+  vertical-align: top;
+  paddin: 0 5px;
+  content: '\f08e';
+  font-size: 30px;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+nav.sociales li a[href*="facebook.com"]::before {
+  content : '\f09a';
+}
+
+nav.sociales li a[href*="twitter.com"]::before {
+  content : '\f099';
+}
+
+nav.sociales li a[href*="youtube.com"]::before {
+  content : '\f16a';
+}
+
+nav.sociales li a[href*="instagram.com"]::before {
+  content : '\f16d';
+}
+
+
+/* MENU PRINCIPAL */
+nav.menu-sitio {
+  display: none;
+}
+
+@media only screen and (min-width:768px){
+  nav.menu-sitio {
+    display: block;
+  }
+}
+
+
+
+nav.menu-sitio ul {
+  list-style: none;
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav.menu-sitio ul li a {
+  text-align: center;
+  padding: 20px 0;
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #651713;
+}
+
+nav.menu-sitio ul li:hover a {
+  font-weight: 700;
+}
+
+nav.menu-sitio ul li.current_page_item a{
+  border-bottom: 3px solid #651713;
+}
+
+
+@media only screen and (min-width:768px){
+  nav.menu-sitio ul li {
+    display: table-cell;
+    width: 1%;
+  }
+}
+
+
+/* menu responsive */
+@media only screen and (max-width:767px){
+  .mobile-menu a {
+    background: #fff;
+    color: #651713;
+    width: 100%;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-bottom: 2px solid #651713;
+  }
+}
+
+@media only screen and (min-width:768px){
+    .mobile-menu a {display: none;}
+}
