@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900" rel="stylesheet">
-    <?php wp_head();
-?>
+    <?php
+        if ( ! function_exists( '_wp_render_title_tag' ) ) {
+            function theme_slug_render_title() {
+        ?>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <?php
+            }
+            add_action( 'wp_head', 'theme_slug_render_title' );
+        }
+    ?>
+    <?php wp_head(); ?>
 </head>
 <body>
-
 <header class="encabezado-sitio">
-    <div class="contenedor">
-        <div class="logo">
-            <a href=" <?php echo esc_url(home_url('/')); ?> ">
-                <img class="logotipo" src=" <?php  echo get_template_directory_uri();?>/img/logo.png " alt="LaPizeria">            </a>
-        </div>
-        <div class="informacion-encabezado">
+    <div class="contenedor">      
             <div class="redes-sociales">
                 <?php
                     $args = array(
@@ -28,34 +29,35 @@
                     'link_before'       =>  '<span class="sr-text">',
                     'link_after'        =>  '</span>'
                     );
-
                     wp_nav_menu($args);
                 ?>
-            </div>
+            </div>        
+        <div class="logo">
+            <a href=" <?php echo esc_url(home_url('/'));?> ">
+                <img class="logotipo" src=" <?php  echo get_template_directory_uri(); ?>/img/logo.png " alt="LaPizeria">
+            </a>
+        </div>
+        <div class="informacion-encabezado">
             <div class="direccion">
-              <p>Sede principal: Cra 66 # 3B Esquina</p>
-              <p>Teléfono: 396 0141 – 323 4292</p>
+              <p><i class="fa fa-phone" aria-hidden="true"></i> Orders: +57 123 456 789</p>
             </div>
         </div>
     </div>
 </header>
-
 <div class="menu-principal">
   <div class="mobile-menu">
     <a href="#" class="mobile"><i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
   </div>
   <nav class="menu-sitio">
       <div class="contenedor navegacion">
-          <?php
-              $args = array(
-              'theme_location' => 'header-menu',
-              'container'     =>  'nav',
-              'container_class'   => 'menu-sitio'
-              );
-
-              wp_nav_menu($args);
-          ?>
+            <?php
+                $args = array(
+                'theme_location' => 'header-menu',
+                'container'     =>  'nav',
+                'container_class'   => 'menu-sitio'
+                );
+                wp_nav_menu($args);
+            ?>
       </div>
   </nav>
-
 </div>

@@ -2,7 +2,7 @@ $ = jQuery.noConflict();
 $(document).ready(function(){
   // Ocultar y mostrar menu
   $('.mobile-menu').on('click', function(){
-    $('nav.menu-sitio').toggle('slow');
+    $('nav.menu-sitio').toggle('fast');
   });
 
   // Reaccionar a resize en la pantalla
