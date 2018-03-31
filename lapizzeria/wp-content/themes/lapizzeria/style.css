@@ -1,5 +1,5 @@
 /*
-Theme Name: La Pizzeria
+Theme Name: Domno - La Pizzeria
 Theme URI:
 Author: Andrés Felipe Patiño Vallejo
 Author URI: https://andresfpatino.github.io/
@@ -7,7 +7,7 @@ Description: Theme para sitio web de restaurantes o pizzas
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: restaurant, mobile first, responsive, pizza
+Tags: restaurante, Mobile first, responsive, pizza, CSS GRID, Flexbox, Fancybox
 Text Domain: Domnoo
 */
 
@@ -29,6 +29,17 @@ html {
 
 .texto-centrado {
   text-align: center;
+}
+
+.text-rojo{
+  font-family: "Arizonia";
+  color: #c10a28;
+  font-size: 32px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* HEADER */
@@ -156,11 +167,21 @@ nav.menu-sitio {
 @media only screen and (min-width:768px){
   nav.menu-sitio {
     display: block;
-    padding: 20px 0;
+    padding: 15px 0 10px;
   }
+
+  .sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .sticky + .menu-principal {
+      padding-top: 80px;
+  }
+
 }
-
-
 
 nav.menu-sitio ul {
   list-style: none;
@@ -195,6 +216,77 @@ nav.menu-sitio ul li.current_page_item a{
     display: table-cell;
     width: 1%;
   }
+}
+
+
+.iconMenu-sticky {
+  display: none;
+}
+
+.iconMenu-sticky i {
+  color: #fff;
+  font-size: 30px;
+}
+
+.iconMenu-sticky:hover {
+  cursor: pointer;
+}
+
+
+.menu-sticky {
+  position: absolute;
+  right: 19px;
+  text-align: center;
+  top: 63px;
+  z-index: 1;
+  background: #fff;
+  width: 160px;
+  display: none;
+}
+
+.menu-sticky:before {
+  content:'';
+  width: 0;
+  height: 0;
+  border-right: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  top: -15px;
+  position: absolute;
+}
+
+.menu-sticky ul {
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+.menu-sticky ul li {
+  padding: 8px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.menu-sticky ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.menu-sticky ul li:hover {
+  background: #c10a28;
+}
+
+.menu-sticky ul li:hover a {
+  color: #fff;
+}
+
+
+.menu-sticky ul li.current_page_item a {
+    color: #c10a28;
+    font-weight: 600;
+}
+
+.menu-sticky ul li.current_page_item:hover a {
+  color: #fff;
 }
 
 
@@ -269,6 +361,7 @@ div.principal{
   padding: 30px 60px;
   background: #fff;
   position: relative;
+  border: 2px solid #f5f5f5;
 }
 
 div.principal .sub_title {
@@ -288,6 +381,24 @@ div.principal .sub_title {
   font-size: 17px;
   line-height: 18px;
 }
+
+.contenido-paginas ul {
+  list-style: none;
+}
+
+.contenido-paginas ul li {
+  margin-bottom: 8px;
+}
+
+.contenido-paginas ul li:before {
+  content: '\f0da';
+  font-family: 'FontAwesome';
+  display: inline-block;
+  margin-right: 8px;
+  color: #c10a28;
+}
+
+
 .breadcrumb {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
@@ -343,4 +454,157 @@ footer .copy {
   margin-top: 20px !important;
   font-weight: 300;
   font-size: 12px;
+}
+
+
+/* CAJAS ACERCA DE*/
+
+.informacion-cajas {
+  display: grid;
+  margin-top: 20px;
+}
+
+@media screen and (min-width:768px){
+  .informacion-cajas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.informacion-cajas .caja {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  color: #fff;
+  text-align: center;
+}
+
+.informacion-cajas .caja .imagen-caja {
+    width: auto;
+    max-width: 100%;
+}
+
+
+@media screen and (min-width:768px){
+  .informacion-cajas .caja {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.informacion-cajas .caja:nth-child(1){
+  background-color: #f19f30;
+}
+
+.informacion-cajas .caja:nth-child(2){
+  background-color: #127427;
+}
+
+.informacion-cajas .caja:nth-child(3){
+  background-color: #a61206;
+}
+
+@media screen and (min-width:768px){
+  .informacion-cajas .caja:nth-child(2) img{
+    order: 2;
+  }
+  .informacion-cajas .caja:nth-child(2) div{
+    order: 1;
+  }
+}
+
+
+.contenido-caja {
+  padding: 0 15px;
+  display: grid;
+  grid-template-rows: 20% 20% 40% 20%;
+  grid-template-areas: "."
+                       "arriba"
+                       "texto"
+                       ".";
+}
+
+@media screen and (min-width:768px){
+  .contenido-caja {
+      grid-template-rows: 20% 30% 30% 20%;
+  }
+}
+
+.contenido-caja > * {
+  align-self: center;
+}
+
+.contenido-caja h4 {
+  grid-area: arriba;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin:5px 0;
+}
+
+.contenido-caja p {
+  grid-area: texto;
+}
+
+
+/* ESPECIALIDADES */
+.nuestras-especialidades {
+  padding: 0 30px;
+}
+div.texto-especilidad {
+  padding: 20px;
+  background: #f8f8f8;
+  margin-bottom: 20px;
+}
+div.texto-especilidad h4 {
+  border-bottom: 1px solid #dfdfdd;
+  padding-bottom: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+div.texto-especilidad h4 span {
+  float: right;
+  color: #c10a28;
+  font-size: 20px;
+}
+div.texto-especilidad p {
+  color: #3d3d3d;
+  line-height: 23px;
+}
+
+/*Grid especialidades*/
+@media only screen and (min-width:768px){
+  .contenedor-grid {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .contenedor-grid::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  [class*='columnas']{
+    padding: 0 10px;
+    float: left;
+  }
+  .columnas1-4{
+    width: 25%;
+  }
+  .columnas2-4 {
+    width: 50%;
+  }
+  .columnas3-4{
+    width: 75%;
+  }
+  .columnas1-3{
+    width: 33.3%;
+  }
+  .columnas2-3{
+    width: 66.6%;
+  }
+}
+
+.fancybox-title.fancybox-title-over-wrap {
+    font-weight: 700;
+    text-transform: uppercase;
 }
