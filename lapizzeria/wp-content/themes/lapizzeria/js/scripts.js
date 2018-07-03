@@ -24,10 +24,12 @@ function stickyMenu() {
   if (window.pageYOffset >= headerHeight) {
     $(".logotipo").css("width", "130px");
     $(".iconMenu-sticky").css("display", "block");
+    $(".informacion-encabezado").css("display", "none");
   } else {
     $(".logotipo").css("width", "203px");
     $(".iconMenu-sticky").css("display", "none");
     $(".menu-sticky").css({'display':'none'});
+    $(".informacion-encabezado").css("display", "block");
   }
 }
 

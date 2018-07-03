@@ -42,6 +42,19 @@ img {
   height: auto;
 }
 
+.button {
+  padding: 12px 30px;
+  margin-top: 7px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.rojo {
+  background: #c10a28;
+  color:#fff;
+}
+
 /* HEADER */
 header.encabezado-sitio{
   padding: 10px 0px 0;
@@ -121,7 +134,8 @@ nav.sociales ul {
   padding: 0;
 }
 
-.sr-text {
+.sr-text,
+.screen-reader-text {
   display: none;
 }
 
@@ -134,7 +148,7 @@ nav.sociales ul li a:before {
   font-family: 'FontAwesome';
   display: inline-block;
   vertical-align: top;
-  paddin: 0 5px;
+  padding: 0 5px;
   content: '\f08e';
   font-size: 30px;
   color: #fff;
@@ -235,7 +249,7 @@ nav.menu-sitio ul li.current_page_item a{
 
 .menu-sticky {
   position: absolute;
-  right: 19px;
+  right: 78px;
   text-align: center;
   top: 63px;
   z-index: 1;
@@ -608,3 +622,129 @@ div.texto-especilidad p {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+/* BLOG */
+article.entrada-blog {
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 25px;
+}
+article.entrada-blog img {
+  margin-top: 30px;
+}
+header.informacion-entrada {
+  margin-top: 20px;
+}
+.entrada-blog .imagen-entrada {
+  position: relative;
+}
+.entrada-blog > a {
+  color: #fff;
+}
+.entrada-blog .imagen-entrada div.fecha {
+  background: #f19f30;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  padding-top: 5px;
+  margin-right: 20px;
+  position: absolute;
+  bottom: 3px;
+}
+.entrada-blog .imagen-entrada div.fecha time {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.entrada-blog .imagen-entrada div.fecha span {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  clear: both;
+  text-transform: uppercase;
+}
+
+header.informacion-entrada h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.entrada-blog .titulo-entrada span.autor, 
+.entrada-blog .titulo-entrada span.category a {
+  color: #505050;
+  margin-top:10px;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+span.autor i, span.category i {
+  font-size: 25px; color: #c10a28;
+}
+
+span.category a {
+  margin-right: 15px;
+}
+
+
+/* SIDEBAR */
+aside.sidebar {
+  padding: 0 20px;
+}
+form.searchform {
+  position: relative;
+}
+form.searchform #searchsubmit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 39px;
+  height: 39px;
+  background: #c10a28;
+  text-indent: -9999px;
+  background-image: url(img/buscador.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;  
+  cursor: pointer;
+}
+form.searchform input {
+  width: 100%;
+  padding: 10px;
+}
+
+
+aside .widget {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+
+aside .widget:first-child,
+aside .widget:last-child{
+  border-bottom: 1px solid transparent;
+}
+
+aside .widget h4 {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+aside .widget ul {
+  list-style: none;
+  padding-left: 0;
+}
+aside .widget ul li{
+  margin-bottom: 8px;
+}
+aside .widget ul li a{
+  text-decoration: none;
+  color: #000;  
+}
+
+aside .widget ul li a:hover{
+  color: #c10a28;  
+}
+
