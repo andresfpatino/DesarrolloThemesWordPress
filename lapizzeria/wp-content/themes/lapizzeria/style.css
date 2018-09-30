@@ -60,6 +60,7 @@ header.encabezado-sitio{
   padding: 10px 0px 0;
   background: #c10a28;
   position: relative;
+  z-index: 1000;
 }
 
 header.encabezado-sitio::before {
@@ -767,4 +768,24 @@ aside .widget ul li a:hover{
 .paginacion .current {
   font-weight: bold;
   color: #555;
+}
+
+/* Galeria 3columnas */
+div#gallery-1 .gallery-item{
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+  div#gallery-1 .gallery-item{
+    width: 33%;
+    margin: 0;
+  }
+}
+
+div#gallery-1 .gallery-item .gallery-icon{
+  padding: 5px;
+}
+
+div#gallery-1 img {
+  border: none;
 }

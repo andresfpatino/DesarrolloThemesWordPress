@@ -17,6 +17,16 @@ $(document).ready(function(){
   });
 });
 
+
+// Fluidbox 
+
+jQuery('.gallery a').each(function(){
+  jQuery(this).attr({'data-fluidbox' : ''})
+});
+if(jQuery('[data-fluidbox]').length > 0){
+  jQuery('[data-fluidbox]').fluidbox();
+}
+
 // Size logo sticky
 window.onscroll = function(){stickyMenu()};
 var headerHeight = $('#header').outerHeight();

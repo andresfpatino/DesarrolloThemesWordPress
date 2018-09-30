@@ -12,6 +12,7 @@ function Domnoo_styles(){
     wp_register_style('style', get_template_directory_uri().'/style.css', array('normalize'), '1.0');
     wp_register_style('lightbox-style', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox.css', '2.1.5' );
     wp_register_style('fancybox-thumb', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox-thumbs.css');
+    wp_register_style('fluidbox', get_template_directory_uri().'/css/fluidbox.min.css');
 
     // 	Llamar las hojas de estilos
     wp_enqueue_style('normalize');
@@ -20,12 +21,15 @@ function Domnoo_styles(){
     wp_enqueue_style('style');
     wp_enqueue_style('lightbox-style');
     wp_enqueue_style('fancybox-thumb');
+    wp_enqueue_style('fluidbox');
 
     // 	Registrar JS
     wp_register_script('scripts', get_template_directory_uri().'/js/scripts.js', array(), '1.0.0', true);
     wp_register_script('fancybox', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox.pack.js', array( 'jquery' ), '2.1.7' ,false, true );
     wp_register_script('lightbox', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox.js', array( 'fancybox' ), '2.1.7' ,false, true );
     wp_register_script('fancybox-thumb', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox-thumbs.js', array(), '1.0.7' ,false, true );
+    wp_register_script('fluidbox', get_template_directory_uri().'/js/jquery.fluidbox.min.js', array(), '' ,false, true );
+
 
     // 	Llamar las JS
     wp_enqueue_script('jquery');
@@ -33,6 +37,7 @@ function Domnoo_styles(){
     wp_enqueue_script('fancybox');
     wp_enqueue_script('lightbox');
     wp_enqueue_script('fancybox-thumb');
+    wp_enqueue_script('fluidbox');
 }
 add_action('wp_enqueue_scripts' , 'Domnoo_styles');
 
@@ -53,7 +58,11 @@ function Domnoo_setup(){
     add_image_size('nosotros', 437, 291, true);
     // Se crea un tamaño de imagen personalizado para las especialidades
     add_image_size('especialidades', 768, 515, true);
+
+    // update_option('thumbnail_size_w', 253);
+    // update_option('thumbnail_size_h', 253);
 }
+
 add_action('after_setup_theme', 'Domnoo_setup');
 
 
