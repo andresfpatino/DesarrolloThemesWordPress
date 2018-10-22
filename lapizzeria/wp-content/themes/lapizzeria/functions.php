@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory().'/inc/database.php';
+
 # --- Soporte etiqueta title
 add_theme_support( 'title-tag' );
 
