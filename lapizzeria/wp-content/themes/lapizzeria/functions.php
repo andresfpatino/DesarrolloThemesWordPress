@@ -1,6 +1,10 @@
 <?php
 
+// Tablas personalizadas y otras funciones
 require get_template_directory().'/inc/database.php';
+
+// Funciones para las reservaciones
+require get_template_directory().'/inc/reservaciones.php';
 
 # --- Soporte etiqueta title
 add_theme_support( 'title-tag' );

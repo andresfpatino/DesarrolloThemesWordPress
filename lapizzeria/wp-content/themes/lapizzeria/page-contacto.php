@@ -38,9 +38,10 @@
                         <input type="tel" name="telefono" placeholder="Teléfono" required>
                     </div>
                     <div class="campo">
-                        <textarea name="menasje" placeholder="Mensaje" required></textarea>
+                        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
                     </div>
-                    <input type="submit" name="enviar" class="button">
+                    <input type="submit" name="enviar" class="button" value="Reservar">
+                    <input type="hidden" name="oculto" value="1">
                 </form>
             </main>
         </div>

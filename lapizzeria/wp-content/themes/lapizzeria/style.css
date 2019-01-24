@@ -63,7 +63,7 @@ header.encabezado-sitio{
   z-index: 1000;
 }
 
-header.encabezado-sitio::before {
+/*header.encabezado-sitio::before {
     position: absolute;
     top: 100%;
     left: 0;
@@ -72,7 +72,7 @@ header.encabezado-sitio::before {
     height: 17px;
     z-index: 1;
     background: url("img/bg-header.png") no-repeat scroll left bottom;
-}
+}*/
 
 
 @media only screen and (min-width:598px){
