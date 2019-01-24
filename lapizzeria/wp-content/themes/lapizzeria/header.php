@@ -32,7 +32,8 @@
       </div>
       <div class="informacion-encabezado">
           <div class="direccion">
-            <p><i class="fa fa-phone" aria-hidden="true"></i> Orders: +57 123 456 789</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo esc_html(get_option('direccion')); ?> </p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> <?php echo esc_html(get_option('telefono')); ?></p>
           </div>
       </div>
       <div class="iconMenu-sticky">
@@ -57,8 +58,7 @@
             <?php
                 $args = array(
                 'theme_location' => 'header-menu',
-                'container'     =>  'nav',
-                'container_class'   => 'menu-sitio'
+                'container'     =>  'nav'
                 );
                 wp_nav_menu($args);
             ?>

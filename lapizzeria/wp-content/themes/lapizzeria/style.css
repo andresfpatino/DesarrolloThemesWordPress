@@ -1,12 +1,10 @@
 /*
 Theme Name: Domno - La Pizzeria
-Theme URI:
 Author: Andrés Felipe Patiño Vallejo
-Author URI: https://andresfpatino.github.io/
+Author URI: https://felipepatino.com/
 Description: Theme para sitio web de restaurantes o pizzas
 Version: 1.0
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: restaurante, Mobile first, responsive, pizza, CSS GRID, Flexbox, Fancybox
 Text Domain: Domnoo
 */
@@ -32,7 +30,7 @@ html {
 }
 
 .text-rojo{
-  font-family: "Arizonia";
+  font-family: 'Satisfy', cursive;
   color: #c10a28;
   font-size: 32px;
 }
@@ -79,7 +77,7 @@ header.encabezado-sitio{
     header.encabezado-sitio .contenedor {
         position:relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     }
 }
@@ -87,7 +85,7 @@ header.encabezado-sitio{
 @media only screen and (max-width:597px){
    header.encabezado-sitio .contenedor{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
@@ -380,7 +378,7 @@ div.principal{
 }
 
 div.principal .sub_title {
-    font-family: "Arizonia";
+    font-family: 'Satisfy', cursive;
     color: #c10a28;
     font-size: 50px;
     margin: 0;

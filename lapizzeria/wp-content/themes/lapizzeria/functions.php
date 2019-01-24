@@ -6,6 +6,9 @@ require get_template_directory().'/inc/database.php';
 // Funciones para las reservaciones
 require get_template_directory().'/inc/reservaciones.php';
 
+// Funciones para las opciones del template
+require get_template_directory().'/inc/opciones_tema.php';
+
 # --- Soporte etiqueta title
 add_theme_support( 'title-tag' );
 
@@ -13,7 +16,7 @@ add_theme_support( 'title-tag' );
 function Domnoo_styles(){
     // 	Registra las hojas de estilos
     wp_register_style('normalize', get_template_directory_uri().'/css/normalize.css', array(), '8.0.0');
-    wp_register_style('google_fonts', 'https://fonts.googleapis.com/css?family=Arizonia|Raleway:100,300,400,700,900', array(), '1.0.0');
+    wp_register_style('google_fonts', 'https://fonts.googleapis.com/css?family=Satisfy', array(), '1.0.0');
     wp_register_style('fontawesome', get_template_directory_uri().'/css/font-awesome.min.css', array('normalize'), '4.7.0');
     wp_register_style('style', get_template_directory_uri().'/style.css', array('normalize'), '1.0');
     wp_register_style('lightbox-style', get_template_directory_uri().'/libs/fancybox-2.1.7/jquery.fancybox.css', '2.1.5' );
