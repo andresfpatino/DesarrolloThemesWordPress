@@ -51,6 +51,24 @@ function Domnoo_styles(){
 add_action('wp_enqueue_scripts' , 'Domnoo_styles');
 
 
+
+
+// Registra cargar de scripts en el admin
+function lapizzeria_admin_scripts() {
+    wp_enqueue_style('sweetalert', get_template_directory_uri().'/css/sweetalert.css');    
+    wp_enqueue_script('sweetalertjs', get_template_directory_uri().'/js/sweetalert.min.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('adminjs', get_template_directory_uri().'/js/admin-ajax.js', array('jquery'), '1.0', true);
+
+    // pasar la url de WP ajax al admin-ajax.js
+    wp_localize_script(
+        'adminjs',
+        'url_eliminar',
+        array('ajaxurl' => admin_url('admin-ajax.php'))
+    );
+}
+add_action('admin_enqueue_scripts', 'lapizzeria_admin_scripts');
+
+
 # --- REGISTRO DE MENUS
 function Domnoo_menus(){
     register_nav_menus(array(
