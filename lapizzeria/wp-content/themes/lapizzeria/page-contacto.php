@@ -40,6 +40,10 @@
                     <div class="campo">
                         <textarea name="mensaje" placeholder="Mensaje" required></textarea>
                     </div>
+
+                    <!-- reCaptcha -->
+                    <div class="g-recaptcha" data-sitekey="6Lct55UUAAAAAHGLrOjd3ynVaJgbn_5CCwq1XYW9"></div>
+
                     <input type="submit" name="enviar" class="button" value="Reservar">
                     <input type="hidden" name="oculto" value="1">
                 </form>

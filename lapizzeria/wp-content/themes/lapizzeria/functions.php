@@ -1,5 +1,13 @@
 <?php
 
+// Añadir reCaptcha
+function lapizzeria_agregar_recaptcha(){ ?>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php
+}
+add_action('wp_head', 'lapizzeria_agregar_recaptcha');
+
+
 // Tablas personalizadas y otras funciones
 require get_template_directory().'/inc/database.php';
 
